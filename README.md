@@ -19,7 +19,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ``docker-compose up --build -d``
 
-``docker-compose exec php-fpm bash``
+``docker exec -it symfony_php /bin/bash``
 
 ### Once inside the PHP container, install the project's dependencies:
 
@@ -31,7 +31,7 @@ Before you begin, ensure you have the following installed on your system:
 
 #### If you are not inside a container:
 
-``docker-compose exec php-fpm bash``
+``docker exec -it symfony_php /bin/bash``
 
 #### Run application command to download videos:
 
