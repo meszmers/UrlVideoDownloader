@@ -124,7 +124,8 @@ class VideoDownloadService
             $url,
             $tempFileLocation,
             $finalFileLocation,
-            &$timeoutTimer
+            &$timeoutTimer,
+            $request,
         ) {
             $this->logger->error($e->getMessage());
 
@@ -137,8 +138,10 @@ class VideoDownloadService
             $this->loop->addTimer(self::RETRY_TIMEOUT_INTERVAL, function () use (
                 $url,
                 $tempFileLocation,
-                $finalFileLocation
+                $finalFileLocation,
+                $request
             ) {
+                $request->close();
                 $this->retryDownload($url, $tempFileLocation, $finalFileLocation);
             });
         });
