@@ -25,6 +25,8 @@ Before you begin, ensure you have the following installed on your system:
 
 ``composer install``
 
+``mkdir -p storage/{temp,completed}``
+
 ### Running the Application
 
 #### If you are not inside a container:

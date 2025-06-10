@@ -17,9 +17,9 @@ class VideoDownloadService
 {
     use VideoDownloadMessageTrait;
 
-    private const RETRY_TIMEOUT_INTERVAL = 5;
-    private const TEMP_LOCATION = 'storage/files/temp/';
-    private const COMPLETED_LOCATION = 'storage/files/completed/';
+    private const RETRY_TIMEOUT_INTERVAL = 10;
+    private const TEMP_LOCATION = 'storage/temp/';
+    private const COMPLETED_LOCATION = 'storage/completed/';
 
     private Client $client;
     private ?LoopInterface $loop = null;
